@@ -1,10 +1,9 @@
-import "./Home.css";
+import React from 'react'
 
 function Home() {
   return (
-    <section>
-
-    </section>
-  );
+    <div>Home</div>
+  )
 }
-export default Home;
+
+export default Home

@@ -17,7 +17,7 @@ import DicasReciclagem from "../pages/DicasReciclagem/DicasReciclagem";
 
 const router = createBrowserRouter([
   { path: "/", element: <Inicio /> },
-  { path: "/perfil", element: <PerfilSelector /> },
+  { path: "/selecionar-perfil", element: <PerfilSelector /> },
   { path: "/login", element: <Login /> },
   { path: "/home", element: <Home /> },
   { path: "/menu", element: <Menu /> },

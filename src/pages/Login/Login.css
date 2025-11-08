@@ -1,0 +1,20 @@
+.login-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* espaço pro olho */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-input .eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+}

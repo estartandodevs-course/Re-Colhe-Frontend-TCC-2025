@@ -21,10 +21,9 @@ const PontosDeColeta = () => {
     <div className="pontos-page">
       <h1 className="pontos-title">Pontos de Coleta</h1>
 
-      {/* Mapa */}
+
       <Map locations={filteredLocations} className="pontos-map" />
 
-      {/* Ícones de materiais */}
       <section className="pontos-icons">
         <div><img src={paper} alt="Papel" /><span>Papel</span></div>
         <div><img src={plastic} alt="Plástico" /><span>Plástico</span></div>
@@ -36,10 +35,8 @@ const PontosDeColeta = () => {
         Encontre pontos de coleta e organizações perto de você
       </h2>
 
-      {/* Barra de busca */}
       <SearchBar onSearch={setSearchTerm} className="pontos-search" />
 
-      {/* Lista de locais */}
       <LocationList locations={filteredLocations} className="pontos-list" />
     </div>
   );

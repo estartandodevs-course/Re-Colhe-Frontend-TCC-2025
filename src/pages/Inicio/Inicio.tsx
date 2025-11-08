@@ -9,7 +9,7 @@ function Inicio() {
       <Logo />
       <h2>Transforme o jeito de descartar: Simples, digital e sustentável.</h2>
       <img src={Lixeira} alt="Uma lixeira verde com símbolo de reciclagem branco, contendo terra e dessa terra nascendo duas folhas de uma planta." />
-      <NavButton to="/login" label="Começar" />
+      <NavButton to="/selecionar-perfil" label="Começar" />
     </main>
   );
 }

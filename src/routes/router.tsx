@@ -9,7 +9,7 @@ import PevsFavoritos from "../pages/PevsFavoritos/PevsFavoritos";
 import Preferencias from "../pages/Preferencias/Preferencias";
 import Ajuda from "../pages/Ajuda/Ajuda";
 import Notificacoes from "../pages/Notificacoes/Notificacoes";
-import MapaColeta from "../pages/MapaColeta/MapaColeta";
+import MapaColeta from "../pages/PontosDeColeta/PontosDeColeta";
 import Solicitacoes from "../pages/Solicitacoes/Solicitacoes";
 import Informacoes from "../pages/Informacoes/Informacoes";
 import NovaSolicitacao from "../pages/NovaSolicitacao/NovaSolicitacao";

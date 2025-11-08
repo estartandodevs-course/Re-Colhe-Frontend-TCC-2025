@@ -27,10 +27,10 @@ const router = createBrowserRouter([
   { path: "/ajuda", element: <Ajuda /> },
   { path: "/notificacoes", element: <Notificacoes /> },
   { path: "/pontos-de-coleta", element: <PontosDeColeta/> },
-  { path: "/solicitacoes", element: <Solicitacoes /> },
+  { path: "/forum", element: <Solicitacoes /> },
   { path: "/informacoes", element: <Informacoes /> },
   { path: "/novasolicitacao", element: <NovaSolicitacao /> },
-  { path: "/dicas", element: <DicasReciclagem /> },
+  { path: "/aprenda", element: <DicasReciclagem /> },
 ]);
 
 export default router;

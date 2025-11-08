@@ -52,7 +52,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <main>
       <div>
         <NavButton to="/selecionar-perfil">
           <img src={voltar} alt="Voltar para seleção de tipo de perfil" />
@@ -100,7 +100,7 @@ const Login = () => {
       <NavButton label="Entrar" className="login-button" onClick={handleLogin} />
 
       {mensagem && <p>{mensagem}</p>}
-    </>
+    </main>
   );
 };
 

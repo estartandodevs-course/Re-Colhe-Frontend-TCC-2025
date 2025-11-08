@@ -5,7 +5,7 @@ import NavButton from '../../components/NavButton/NavButton';
 
 const PerfilSelector = () => {
   return (
-    <>
+    <main>
       <img src={Logo2} alt="Logo Re.Colhe, é o símbolo de reciclágem mas com estilo da natureza, formados por folhas de planta" />
       <h1>Escolha como deseja fazer parte da mudança.</h1>
 
@@ -20,7 +20,7 @@ const PerfilSelector = () => {
         <img src={Empresa} alt="" />
         <span>Sou empresa</span>
       </NavButton>
-    </>
+    </main>
   );
 }
 

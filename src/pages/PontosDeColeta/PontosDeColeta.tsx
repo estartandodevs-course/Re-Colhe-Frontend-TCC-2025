@@ -18,7 +18,7 @@ const PontosDeColeta = () => {
   );
 
   return (
-    <div className="pontos-page">
+    <main className="pontos-page">
       <h1 className="pontos-title">Pontos de Coleta</h1>
 
 
@@ -38,7 +38,7 @@ const PontosDeColeta = () => {
       <SearchBar onSearch={setSearchTerm} className="pontos-search" />
 
       <LocationList locations={filteredLocations} className="pontos-list" />
-    </div>
+    </main>
   );
 };
 

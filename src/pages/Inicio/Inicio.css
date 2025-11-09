@@ -40,7 +40,6 @@ section {
   width: 20.63rem;
   height: 3rem;
   border-radius: 8px;
-  padding: 1rem 1.5rem;
   background-color: var(--green-forest);
   color: var(--soft-white);
   cursor: pointer;

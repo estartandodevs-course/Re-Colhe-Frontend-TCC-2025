@@ -8,7 +8,11 @@ import notificacoes from '../../assets/icons/header/notificacao.png';
 import { useState, useEffect } from 'react';
 import './Header.css';
 
-const Header = () => {
+type HeaderProps = {
+  className?: string,
+}
+
+const Header = ({ className } : HeaderProps) => {
   const location = useLocation();
   const navigate = useNavigate();
   const currentPath = location.pathname;
@@ -20,7 +24,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header>
+    <header className={className}>
       {currentPath === '/home' ? (
         <img src={ReColhe} alt="Logo da Re.Colhe" className="logo-header" />
       ) : (

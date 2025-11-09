@@ -1,16 +1,15 @@
 import { useState } from 'react';
-import search from '../../assets/icons/lupa.png'
+import search from '../../assets/icons/lupa.png';
+import './SearchBar.css'
 
 type SearchBarProps = {
   onSearch?: (term: string) => void;
-  className?: string;
   placeholder?: string;
   buttonLabel?: string;
 };
 
 function SearchBar({
   onSearch,
-  className,
   placeholder = 'Digite sua busca...',
 }: SearchBarProps) {
   const [input, setInput] = useState('');
@@ -21,8 +20,8 @@ function SearchBar({
   };
 
   return (
-    <form onSubmit={handleSubmit} className={className}>
-      <button type="submit" className="search-button">
+    <form onSubmit={handleSubmit} className="search-bar">
+      <button type="submit">
         <img src={search} alt="Buscar" />
       </button>
       <input
@@ -30,7 +29,6 @@ function SearchBar({
         placeholder={placeholder}
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="search-input"
       />
     </form>
   );

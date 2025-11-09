@@ -6,9 +6,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(-soft-white);
+  background-color: var(--soft-white);
   border-top: 2px solid #999999;
   border-radius: 12px 12px 0 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
 }
 
 .footer-nav ul {

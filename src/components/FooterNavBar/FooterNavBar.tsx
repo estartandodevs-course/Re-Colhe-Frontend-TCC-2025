@@ -14,6 +14,7 @@ import aprendaIconActive from '../../assets/icons/nav-footer/aprenda-menu-green.
 import forumIconActive from '../../assets/icons/nav-footer/forum-menu-green.png';
 import menuIconActive from '../../assets/icons/nav-footer/menu-green.png';
 
+
 const FooterNavBar = () => {
   const location = useLocation();
   const currentPath = location.pathname;

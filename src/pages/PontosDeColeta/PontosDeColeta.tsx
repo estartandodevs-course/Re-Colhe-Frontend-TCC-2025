@@ -40,7 +40,6 @@ const PontosDeColeta = () => {
 
         <SearchBar
           onSearch={setSearchTerm}
-          className="pontos-search"
           placeholder="Digite o material: papel, plástico, metal ou vidro"
           buttonLabel="Buscar"
         />

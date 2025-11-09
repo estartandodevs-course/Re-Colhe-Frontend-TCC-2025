@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+ul, ol {
+    list-style: none;
+}
+
 html, body {
   height: 100%;
   font-family: var(--font-arial);

@@ -38,7 +38,12 @@ const PontosDeColeta = () => {
           Encontre pontos de coleta e organizações perto de você
         </h2>
 
-        <SearchBar onSearch={setSearchTerm} className="pontos-search" />
+        <SearchBar
+          onSearch={setSearchTerm}
+          className="pontos-search"
+          placeholder="Digite o material: papel, plástico, metal ou vidro"
+          buttonLabel="Buscar"
+        />
 
         <LocationList locations={filteredLocations} className="pontos-list" />
       </main>

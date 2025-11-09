@@ -5,7 +5,7 @@ function DicasDeReciclagem() {
         <>
       <Header></Header>
       <main>
-      <div><h1>Menu</h1></div>
+      <div><h1>Aprenda</h1></div>
       </main>
       <FooterNavBar />
     </>

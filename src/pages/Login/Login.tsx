@@ -53,37 +53,37 @@ const Login = () => {
   };
 
   return (
-    <main>
-      <div>
-        <NavButton to="/selecionar-perfil">
+    <main className="login-main">
+
+      <div className="return-container">
+        <NavButton to="/selecionar-perfil" className="return-button">
           <img src={voltar} alt="Voltar para seleção de tipo de perfil" />
         </NavButton>
       </div>
 
-      <img src={Logo2} alt="Logo Re.Colhe" />
+      <section className="first-section">
+        <img src={Logo2} alt="Logo Re.Colhe" className="logo2" />
 
-      {userType ? (
-        <h2>Olá {userType}. Bem vindo ao Re.Colhe!</h2>
-      ) : (
-        <h2>Bem vindos ao Re.Colhe!</h2>
-      )}
+        {userType && (
+          <h1 className="title">Olá {userType}.<br /> Bem vindo ao Re.Colhe!</h1>
+        )}
 
-      <h1>Login</h1>
-      <h3>Entre com as suas credenciais</h3>
+        <h2 className="login-title">Login</h2>
+        <h3 className="credential">Entre com as suas credenciais</h3>
 
-      <section>
-        <label>
-          E-mail
+        <section className="login-section">
+          <label htmlFor="email">E-mail</label>
           <InputBar
+            id="email"
             placeholder="Digite seu e-mail"
             className="login-input"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </label>
-        <label>
-          Senha
+
+          <label htmlFor="password">Senha</label>
           <InputBar
+            id="password"
             placeholder="Digite sua senha"
             type="password"
             className="login-input"
@@ -91,16 +91,18 @@ const Login = () => {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
           />
-        </label>
-        <div>
-          <a href="#">Esqueci a senha</a>
-        </div>
+
+          <div className="reset-password-container">
+            <a href="#">Esqueci a senha</a>
+          </div>
+        </section>
+
+        {/* Manter: botão reutilizável chamando handleLogin */}
+        <NavButton label="Entrar" className="login-button" onClick={handleLogin} />
+
+        {mensagem && <p>{mensagem}</p>}
+
       </section>
-
-      {/* Manter: botão reutilizável chamando handleLogin */}
-      <NavButton label="Entrar" className="login-button" onClick={handleLogin} />
-
-      {mensagem && <p>{mensagem}</p>}
     </main>
   );
 };

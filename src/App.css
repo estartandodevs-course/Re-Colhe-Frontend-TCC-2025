@@ -18,6 +18,14 @@ html, body {
 
 /* Variáveis Tema */
 
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./assets/fonts/Coolvetica Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colors */
   --soft-white: #F9FAFB;
@@ -40,6 +48,7 @@ html, body {
   --font-semibold: 600;
 
   --poppins-text: 16px;            /* 1rem */
+  --poppins-text-button: 1.25rem; /* 20rem */
   --poppins-text-label: 14px;      /* 0.875rem */
 
 

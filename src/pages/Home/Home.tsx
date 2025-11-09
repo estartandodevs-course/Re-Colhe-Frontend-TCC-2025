@@ -8,9 +8,15 @@ import forum from '../../assets/img/home/colaboracao.png';
 import check from '../../assets/img/home/check.png';
 import notificacao from '../../assets/img/home/notificacao.png';
 import FooterNavBar from '../../components/FooterNavBar/FooterNavBar';
+import { useState, useEffect } from 'react';
 
 function Home() {
-  const userType = localStorage.getItem('userType');
+  const [userType, setUserType] = useState<string | null>(null);
+
+  useEffect(() => {
+    setUserType(localStorage.getItem('userType'));
+  }, []);
+  
   return (
     <>
       <Header />

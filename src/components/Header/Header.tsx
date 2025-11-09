@@ -5,13 +5,18 @@ import voltar from '../../assets/icons/voltar.png';
 import moradorAvatar from '../../assets/icons/header/morador-avatar.png';
 import empresaAvatar from '../../assets/icons/header/empresa-avatar.png';
 import notificacoes from '../../assets/icons/header/notificacao.png';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const currentPath = location.pathname;
 
-  const userType = localStorage.getItem('userType');
+  const [userType, setUserType] = useState<string | null>(null);
+
+  useEffect(() => {
+    setUserType(localStorage.getItem('userType'));
+  }, []);
 
   return (
     <header>
@@ -23,11 +28,11 @@ const Header = () => {
         </NavButton>
       )}
 
-      {currentPath !== '/notificacoes' ? (
+      {currentPath !== '/notificacoes' && (
         <NavButton>
           <img src={notificacoes} alt="Ir para notificações" />
         </NavButton>
-      ) : null}
+      )}
 
       {/* Avatar condicional */}
       {userType === 'morador' && <img src={moradorAvatar} alt="Avatar do morador" />}

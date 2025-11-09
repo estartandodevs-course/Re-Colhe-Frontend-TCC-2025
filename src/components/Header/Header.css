@@ -1,0 +1,37 @@
+@import url("../../App.css");
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(-soft-white);
+  padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+}
+
+.logo-header {
+  width: 5.25rem;
+  height: 2.25rem;
+}
+
+.return {
+  width: 1.88rem;
+  height: 1.88rem;
+}
+
+.notifications {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.return,
+.notifications {
+  background-color: transparent;
+  border: none;
+}
+
+.avatar {
+  width: 3.19rem;
+  width: 3.44rem;
+
+}

@@ -6,6 +6,7 @@ import moradorAvatar from '../../assets/icons/header/morador-avatar.png';
 import empresaAvatar from '../../assets/icons/header/empresa-avatar.png';
 import notificacoes from '../../assets/icons/header/notificacao.png';
 import { useState, useEffect } from 'react';
+import './Header.css';
 
 const Header = () => {
   const location = useLocation();
@@ -21,22 +22,22 @@ const Header = () => {
   return (
     <header>
       {currentPath === '/home' ? (
-        <img src={ReColhe} alt="Logo da Re.Colhe" />
+        <img src={ReColhe} alt="Logo da Re.Colhe" className="logo-header" />
       ) : (
-        <NavButton onClick={() => navigate(-1)}>
+        <NavButton onClick={() => navigate(-1)} className="return">
           <img src={voltar} alt="Voltar para página anterior" />
         </NavButton>
       )}
 
       {currentPath !== '/notificacoes' && (
-        <NavButton>
+        <NavButton className="notifications">
           <img src={notificacoes} alt="Ir para notificações" />
         </NavButton>
       )}
 
       {/* Avatar condicional */}
-      {userType === 'morador' && <img src={moradorAvatar} alt="Avatar do morador" />}
-      {userType === 'empresa' && <img src={empresaAvatar} alt="Avatar da empresa" />}
+      {userType === 'morador' && <img src={moradorAvatar} alt="Avatar do morador" className="avatar" />}
+      {userType === 'empresa' && <img src={empresaAvatar} alt="Avatar da empresa" className="avatar" />}
     </header>
   );
 };

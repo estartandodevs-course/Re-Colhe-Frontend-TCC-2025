@@ -61,15 +61,16 @@
   margin-bottom: 1.5rem;
 }
 
-.login-section {
-  width: 100%;
+.login-form {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
   margin-bottom: 1.5rem;
 }
 
-.login-section label {
+.login-form label {
   width: 100%;
   font-family: var(--font-poppins);
   font-weight: var(--font-semibold1);
@@ -115,10 +116,10 @@
 }
 
 .reset-password-container a {
-font-family: var(--font-poppins);
-font-weight: var(--font-semibold);
-font-size: var(--poppins-text-label);
-color: var(--green-forest);
+  font-family: var(--font-poppins);
+  font-weight: var(--font-semibold);
+  font-size: var(--poppins-text-label);
+  color: var(--green-forest);
 }
 
 .login-button {
@@ -133,7 +134,7 @@ color: var(--green-forest);
 }
 
 .login-buton:hover {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-color: var(--green-forest);
   color: var(--green-forest);
 }
@@ -143,4 +144,3 @@ color: var(--green-forest);
   color: var(--green-forest);
   transform: scale(0.98);
 }
-

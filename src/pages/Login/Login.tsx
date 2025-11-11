@@ -71,7 +71,8 @@ const Login = () => {
         <h2 className="login-title">Login</h2>
         <h3 className="credential">Entre com as suas credenciais</h3>
 
-        <section className="login-section">
+        <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }} className="login-form">
+
           <label htmlFor="email">E-mail</label>
           <InputBar
             id="email"
@@ -95,12 +96,11 @@ const Login = () => {
           <div className="reset-password-container">
             <a href="#">Esqueci a senha</a>
           </div>
-        </section>
 
-        {/* Manter: botão reutilizável chamando handleLogin */}
-        <NavButton label="Entrar" className="login-button" onClick={handleLogin} />
-
-        {mensagem && <p>{mensagem}</p>}
+          {/* Manter: botão reutilizável chamando handleLogin */}
+          <NavButton label="Entrar" className="login-button" onClick={handleLogin} />
+          {mensagem && <p>{mensagem}</p>}
+        </form>
 
       </section>
     </main>

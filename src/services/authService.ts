@@ -9,7 +9,8 @@ type LoginPayload = {
 
 export async function login(payload: LoginPayload): Promise<LoginResult> {
   // por enquanto usa mock
-  return loginMock(payload);
+  const result: LoginResult = loginMock(payload);
+  return result;
 
   // Futuro: trocar para chamada real
   // const response = await axios.post('/api/login', payload);

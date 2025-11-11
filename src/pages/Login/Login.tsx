@@ -41,6 +41,7 @@ const Login = () => {
       // salva dados no localStorage para uso dinâmico nas próximas páginas
       localStorage.setItem('token', result.data.token);
       localStorage.setItem('email', result.data.email);
+      localStorage.setItem('userName', result.data.userName);
       localStorage.setItem('userType', userType);
 
 

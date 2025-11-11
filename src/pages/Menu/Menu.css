@@ -1,0 +1,42 @@
+@import url("../../App.css");
+
+.menu-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 1rem;
+  overflow-y: auto;
+  gap: 1rem;
+}
+
+.menu-main ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.menu-main nav ul li,
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.link h3 {
+  font-family: var(--font-poppins);
+  font-weight: var(--font-semibold1);
+  font-size: --poppins-text-button;
+  color: var(--moss-green);
+}
+
+.link span {
+  font-family: var(--font-poppins);
+  font-weight: var(--font-regular);
+  font-size: var(--poppins-text-label);
+  color: #000000;
+}

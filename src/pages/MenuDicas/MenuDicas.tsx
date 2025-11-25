@@ -35,7 +35,7 @@ const MenuDicas = () => {
 
         <nav>
           <ul className="buttons-dicas">
-            <li><NavButton to={userType === 'morador' ? "/aprenda" : "/dicas-para-empresa"} className="button-nav-dicas">
+            <li><NavButton to="/dicas-reciclagem" className="button-nav-dicas">
               <img src={greenEarth} alt="Botão de navegação para fórum" />
               {userType === 'morador' && <div><h3>Dicas de Reciclagem</h3><span>Aprenda as melhores práticas para separar seu lixo.</span></div>}
               {userType === 'empresa' && <div><h3>Boas Práticas de Descarte</h3><span>Dicas rápidas para gerenciar resíduos da sua empresa</span></div>}

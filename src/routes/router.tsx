@@ -14,7 +14,7 @@ import Solicitacoes from "../pages/Solicitacoes/Solicitacoes";
 import MenuDicas from "../pages/MenuDicas/MenuDicas";
 import NovaSolicitacao from "../pages/NovaSolicitacao/NovaSolicitacao";
 import DicasReciclagem from "../pages/DicasReciclagem/DicasReciclagem";
-import DicasEmpresa from "../pages/DicasEmpresa/DicasEmpresa";
+import Aprenda from "../pages/Aprenda/Aprenda";
 
 const router = createBrowserRouter([
   { path: "/", element: <Inicio /> },
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
   { path: "/forum", element: <Solicitacoes /> },
   { path: "/menu-dicas", element: <MenuDicas /> },
   { path: "/novasolicitacao", element: <NovaSolicitacao /> },
-  { path: "/aprenda", element: <DicasReciclagem /> },
-  { path: "/dicas-para-empresa", element: <DicasEmpresa /> },
+  { path: "/dicas-reciclagem", element: <DicasReciclagem /> },
+  { path: "/aprenda", element: <Aprenda /> },
 ]);
 
 export default router;

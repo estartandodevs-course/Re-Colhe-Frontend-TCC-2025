@@ -31,7 +31,7 @@ const FooterNavBar = () => {
           </NavButton>
         </li>
         <li>
-          <NavButton to="/aprenda" className="aprenda">
+          <NavButton to="/menu-dicas" className="aprenda">
             <img
               src={currentPath === '/aprenda' ? aprendaIconActive : aprendaIcon}
               alt="Página Aprenda"

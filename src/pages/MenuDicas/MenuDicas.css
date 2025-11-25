@@ -90,7 +90,7 @@ nav {
   text-align: start;
 }
 
-.button--nav-dicas:active {
+.button-nav-dicas:active {
   border: 1px solid #01402F;
   background-color: var(--soft-white);
 }

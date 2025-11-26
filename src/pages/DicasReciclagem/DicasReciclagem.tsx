@@ -17,7 +17,7 @@ const DicasDeReciclagem = () => {
     <>
       <Header />
       <main className="pagina-dicas-reciclagem">
-        {userType === 'morador' && (<h1 className="titulo-dicas-reciclagem">Pontos de Coleta</h1>)}
+        {userType === 'morador' && (<h1 className="titulo-dicas-reciclagem">Dicas de Reciclagem</h1>)}
         {userType === 'empresa' && (<h1 className="titulo-dicas-reciclagem">Boas Práticas de Descarte</h1>)}
 
         {userType === 'morador' && (<h2 className="subtitulo-dicas-reciclagem">Inspire-se com textos e vídeos cheios de boas ideias</h2>)}

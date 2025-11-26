@@ -14,7 +14,7 @@ import Solicitacoes from "../pages/Solicitacoes/Solicitacoes";
 import MenuDicas from "../pages/MenuDicas/MenuDicas";
 import NovaSolicitacao from "../pages/NovaSolicitacao/NovaSolicitacao";
 import DicasReciclagem from "../pages/DicasReciclagem/DicasReciclagem";
-import Aprenda from "../pages/Aprenda/Aprenda";
+import Aprender from "../pages/Aprender/Aprender";
 
 const router = createBrowserRouter([
   { path: "/", element: <Inicio /> },
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   { path: "/menu-dicas", element: <MenuDicas /> },
   { path: "/novasolicitacao", element: <NovaSolicitacao /> },
   { path: "/dicas-reciclagem", element: <DicasReciclagem /> },
-  { path: "/aprenda", element: <Aprenda /> },
+  { path: "/aprenda", element: <Aprender /> },
 ]);
 
 export default router;

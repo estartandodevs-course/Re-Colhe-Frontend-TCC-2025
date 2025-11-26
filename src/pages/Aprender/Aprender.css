@@ -1,0 +1,65 @@
+.pagina-aprender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  height: 100vh;
+  background-color: var(--soft-white);
+  padding: 0 1rem;
+  margin-top: 6.43rem;
+}
+
+.titulo-aprender {
+  font-family: var(--font-coolvetica);
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #011c15;
+}
+
+.artigo-aprender {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.artigo-aprender p {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000000;
+  text-align: left;
+}
+
+.lista-ordenada-aprender {
+  width: 100%;
+  counter-reset: item;
+  padding-left: 1rem;
+}
+
+.lista-ordenada-aprender li {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lista-ordenada-aprender li h1 {
+  counter-increment: item;
+  width: 100%;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.lista-ordenada-aprender li h1::before {
+  content: counter(item) ". ";
+  font-weight: bold;
+  margin-right: 0.5rem;
+}

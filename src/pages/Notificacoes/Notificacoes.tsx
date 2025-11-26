@@ -17,10 +17,9 @@ import {
 } from '../../mocks/notificacoesMock';
 
 const Notificacoes = () => {
-  const [perfilUsuario, setPerfilUsuario] = useState<string | null>(null); // morador ou empresa
-  const [abaAtiva, setAbaAtiva] = useState<string>("coletas"); // aba ativa: coletas, campanhas ou avisos
+  const [perfilUsuario, setPerfilUsuario] = useState<string | null>(null);
+  const [abaAtiva, setAbaAtiva] = useState<string>("coletas");
 
-  // Estados locais para permitir remoção
   const [coletaMorador, setColetaMorador] = useState<Notificacao[]>(notificacoesColetaMorador);
   const [coletaEmpresa, setColetaEmpresa] = useState<Notificacao[]>(notificacoesColetaEmpresa);
   const [campanhaMorador, setCampanhaMorador] = useState<Notificacao[]>(notificacoesCampanhaMorador);

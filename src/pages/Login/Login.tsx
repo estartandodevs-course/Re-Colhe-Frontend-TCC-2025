@@ -5,13 +5,7 @@ import NavButton from "../../components/NavButton/NavButton";
 import "./Login.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-
-// modificar para implementar endpoints da API: trocar import para o serviço real (ex: '../../services/authServiceReal')
 import { login } from "../../services/authService";
-
-// Manter para funcionamento local: tipagem do resultado do login mockado.
-// modificar para implementar endpoints da API: criar um tipo vindo da API? (ex: LoginResponse)
-import type { LoginResult } from "../../mocks/auth/authServiceMock";
 
 const Login = () => {
   const location = useLocation();
@@ -19,10 +13,11 @@ const Login = () => {
   const state = location.state as { userType?: "morador" | "empresa" };
   const userType = state?.userType;
 
-  // Manter: estados locais para email, senha e mensagens podem ser reaproveitados sem mudanças.
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [mensagem, setMensagem] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   const handleLogin = async () => {
     if (!userType) {
@@ -30,30 +25,40 @@ const Login = () => {
       return;
     }
 
-    // Manter para funcionamento local: chamada ao serviço de login.
-    // implementação futura: aqui o login vai chamar o endpoint real via axios/fetch.
-    const result: LoginResult = await login({
+    if (!email || !senha) {
+      setMensagem("Preencha email e senha.");
+      return;
+    }
+
+    setLoading(true);
+    setMensagem(null);
+
+    const result = await login({
       email,
       senha,
       userType,
     });
 
+    setLoading(false);
+
     if (result.success) {
-      // Manter: além da mensagem, salvar token no localStorage/sessionStorage.
+      setLoginSuccess(true);
       setMensagem(`Login bem-sucedido como ${userType}!`);
 
-      // salva dados no localStorage para uso dinâmico nas próximas páginas
       localStorage.setItem("token", result.data.token);
       localStorage.setItem("email", result.data.email);
-      localStorage.setItem("password", result.data.senha);
-      localStorage.setItem("cep", result.data.cep);
       localStorage.setItem("userName", result.data.userName);
+      localStorage.setItem("cep", result.data.cep);
       localStorage.setItem("userType", userType);
+      localStorage.setItem("usuarioId", result.data.usuarioId.toString());
+      localStorage.setItem("userTypeApi", result.data.userType);
 
-      navigate("/home");
+      setTimeout(() => {
+        navigate("/home");
+      }, 1000);
+
     } else {
-      // Manter: feedback de erro.
-      // Possíveis modificações: pode exibir mensagens vindas do backend (ex: "Usuário não encontrado").
+      setLoginSuccess(false);
       setMensagem(result.error);
     }
   };
@@ -109,13 +114,17 @@ const Login = () => {
             <a href="#">Esqueci a senha</a>
           </div>
 
-          {/* Manter: botão reutilizável chamando handleLogin */}
           <NavButton
-            label="Entrar"
+            label={loading ? "Entrando..." : "Entrar"}
             className="login-button"
             onClick={handleLogin}
           />
-          {mensagem && <p>{mensagem}</p>}
+          
+          {mensagem && (
+            <p className={loginSuccess ? "mensagem-sucesso" : "mensagem-erro"}>
+              {mensagem}
+            </p>
+          )}
         </form>
       </section>
     </main>

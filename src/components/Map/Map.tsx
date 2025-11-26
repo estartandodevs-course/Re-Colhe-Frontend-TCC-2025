@@ -5,7 +5,7 @@ import papelIcon from '../../assets/icons/map/pin-paper.png';
 import plasticoIcon from '../../assets/icons/map/pin-plastic.png';
 import metalIcon from '../../assets/icons/map/pin-metal.png';
 import vidroIcon from '../../assets/icons/map/pin-glass.png';
-import type { Location } from '../../mocks/locations';
+import type { Location } from '../../types/locations';
 
 type MapProps = {
   locations: Location[];
@@ -20,10 +20,10 @@ const iconMap: Record<string, L.Icon> = {
 };
 
 function Map({ locations, className }: MapProps) {
-  const center: [number, number] = [-22.755, -43.311];
+  const center: [number, number] = [-22.9068, -43.1909];
 
   return (
-    <MapContainer center={center} zoom={13} scrollWheelZoom className={className}>
+    <MapContainer center={center} zoom={11} scrollWheelZoom className={className}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

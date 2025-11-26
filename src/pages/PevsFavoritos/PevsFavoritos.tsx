@@ -2,38 +2,48 @@ import Header from '../../components/Header/Header';
 import FooterNavBar from '../../components/FooterNavBar/FooterNavBar';
 import { useState, useEffect } from 'react';
 import LocationCard from '../../components/LocationCard/LocationCard';
-import { getFavorites } from '../../services/favorites';
-import type { Location } from '../../mocks/locations';
+import { getFavorites } from '../../services/favoritesService';
+import type { Location } from '../../types/locations';
 import heart from '../../assets/icons/menu/heart.png';
 import './PevsFavoritos.css';
 
 function PevsFavoritos() {
   const [favorites, setFavorites] = useState<Location[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const refreshFavorites = async () => {
-    const favs = await getFavorites();
-    setFavorites(favs);
+  const getUsuarioId = (): number => {
+    return parseInt(localStorage.getItem('usuarioId') || '0');
   };
 
   useEffect(() => {
-    refreshFavorites();
-
-    // Atualiza se houver mudanças no localStorage (mock)
-    const handleStorage = () => refreshFavorites();
-    window.addEventListener('storage', handleStorage);
-
-    return () => {
-      window.removeEventListener('storage', handleStorage);
+    const loadFavorites = async () => {
+      const usuarioId = getUsuarioId();
+      if (usuarioId > 0) {
+        const favs = await getFavorites(usuarioId);
+        setFavorites(favs);
+      }
+      setLoading(false);
     };
+
+    loadFavorites();
   }, []);
 
-  // callback que recebe do LocationCard
   const handleToggle = (id: number, isFav: boolean) => {
     if (!isFav) {
-      // remove da lista
-      setFavorites((prev) => prev.filter((loc) => loc.id !== id));
+      setFavorites(prev => prev.filter(loc => loc.id !== id));
     }
   };
+
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <main className="favoritos-page">
+          <div className="loading">Carregando favoritos...</div>
+        </main>
+      </>
+    );
+  }
 
   return (
     <>

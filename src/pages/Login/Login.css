@@ -146,3 +146,15 @@
   color: var(--green-forest);
   transform: scale(0.98);
 }
+
+.mensagem-sucesso {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.mensagem-erro {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}

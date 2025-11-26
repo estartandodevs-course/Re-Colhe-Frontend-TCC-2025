@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
-import type { Location } from '../../mocks/locations';
-import {
-  isFavorite,
-  toggleFavorite,
-} from '../../services/favorites';
+import type { Location } from '../../types/locations';
+import { isFavorite, toggleFavorite } from '../../services/favoritesService';
 import favorito from '../../assets/icons/location-card/favoritado.png';
 import favoritar from '../../assets/icons/location-card/favoritar.png';
 import paper from '../../assets/icons/map/pin-paper.png';
@@ -14,47 +11,64 @@ import './LocationCard.css'
 
 type LocationCardProps = {
   location: Location;
-  onToggle?: (id: number, isFav: boolean) => void; // callback para avisar o pai
+  onToggle?: (id: number, isFav: boolean) => void;
+  searchedMaterial?: string;
 };
 
-function LocationCard({ location, onToggle }: LocationCardProps) {
+function LocationCard({ location, onToggle, searchedMaterial }: LocationCardProps) {
   const [favorite, setFavorite] = useState(false);
 
-  // Verifica se já está favoritado ao montar
+  const getUsuarioId = (): number => {
+    return parseInt(localStorage.getItem('usuarioId') || '0');
+  };
+
   useEffect(() => {
     const checkFavorite = async () => {
-      const fav = await isFavorite(location.id);
-      setFavorite(fav);
+      const usuarioId = getUsuarioId();
+      if (usuarioId > 0) {
+        const fav = await isFavorite(usuarioId, location.id);
+        setFavorite(fav);
+      }
     };
     checkFavorite();
   }, [location.id]);
 
   const handleFavorite = async () => {
-    await toggleFavorite(location);
-    const fav = await isFavorite(location.id);
-    setFavorite(fav);
-
-    // avisa o componente pai
-    if (onToggle) {
-      onToggle(location.id, fav);
+    const usuarioId = getUsuarioId();
+    if (usuarioId === 0) {
+      alert('Usuário não identificado. Faça login novamente.');
+      return;
+    }
+    
+    const success = await toggleFavorite(usuarioId, location);
+    
+    if (success) {
+      const newFavState = !favorite;
+      setFavorite(newFavState);
+      if (onToggle) {
+        onToggle(location.id, newFavState);
+      }
+    } else {
+      alert('Erro ao atualizar favoritos.');
     }
   };
 
-  const renderMaterialIcons = () => {
+  const renderMaterialIcon = () => {
+    const materialToShow = searchedMaterial || location.materials[0];
+    
+    const iconMap: Record<string, string> = {
+      'papel': paper,
+      'plástico': plastic,
+      'plastico': plastic,
+      'metal': metal,
+      'vidro': glass
+    };
+
+    const iconSrc = iconMap[materialToShow.toLowerCase()] || paper;
+
     return (
       <span className="materials-icons">
-        {location.materials.includes('papel') && (
-          <img src={paper} alt="Papel" className="material-icon" />
-        )}
-        {location.materials.includes('plástico') && (
-          <img src={plastic} alt="Plástico" className="material-icon" />
-        )}
-        {location.materials.includes('metal') && (
-          <img src={metal} alt="Metal" className="material-icon" />
-        )}
-        {location.materials.includes('vidro') && (
-          <img src={glass} alt="Vidro" className="material-icon" />
-        )}
+        <img src={iconSrc} alt={materialToShow} className="material-icon" />
       </span>
     );
   };
@@ -63,13 +77,13 @@ function LocationCard({ location, onToggle }: LocationCardProps) {
     <section className="location-card">
       <div>
         <h3 className="location-title">
-          {renderMaterialIcons()}
+          {renderMaterialIcon()}
           {location.name}
         </h3>
         <div className="infos-container">
-        <p className="location-info">{location.address}</p>
-        <p className="location-info">Aberto de {location.openingDays} das {location.openTime} às {location.closeTime}</p>
-        <p className="location-info">{location.phone}</p>
+          <p className="location-info">{location.address}</p>
+          <p className="location-info">Aberto de {location.openingDays} das {location.openTime} às {location.closeTime}</p>
+          <p className="location-info">{location.phone}</p>
         </div>
       </div>
       <button
@@ -84,7 +98,6 @@ function LocationCard({ location, onToggle }: LocationCardProps) {
         )}
       </button>
     </section>
-
   );
 }
 

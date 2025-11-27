@@ -7,7 +7,7 @@ import type { Location } from '../../types/locations';
 import heart from '../../assets/icons/menu/heart.png';
 import './PevsFavoritos.css';
 
-function PevsFavoritos() {
+const PevsFavoritos = () => {
   const [favorites, setFavorites] = useState<Location[]>([]);
   const [loading, setLoading] = useState(true);
 

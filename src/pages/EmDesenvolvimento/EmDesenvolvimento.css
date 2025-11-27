@@ -1,0 +1,35 @@
+.pagina-em-desenvolvimento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  height: 100vh;
+  background-color: var(--soft-white);
+  padding: 0 1rem;
+  margin-top: 6.43rem;
+}
+
+.pagina-em-desenvolvimento div {
+  width: 100%;
+  padding: 50% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  text-align: center;
+}
+
+.pagina-em-desenvolvimento div h1 {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #011c15;
+}
+
+.pagina-em-desenvolvimento div span {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 1rem;
+  color: #011c15;
+}

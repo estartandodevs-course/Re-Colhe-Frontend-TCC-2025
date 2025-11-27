@@ -9,7 +9,7 @@ import logout from '../../assets/icons/menu/logout.png';
 import { Link } from 'react-router-dom';
 import './Menu.css';
 
-function Menu() {
+const Menu = () => {
   const [userType, setUserType] = useState<string | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
 
@@ -29,7 +29,7 @@ function Menu() {
           <ul>
             <li><Link to="/meus-dados" className="link"><img src={notepad} alt="Ícone de um bloco de notas" /><div><h3>Meus dados</h3></div></Link></li>
             <li><Link to="/pevs" className="link"><img src={heart} alt="Ícone de um coração" /><div><h3>PEVs favoritos</h3><span>Pontos de Entrega Voluntária</span></div></Link></li>
-            <li><Link to="/preferencias" className="link"><img src={gear} alt="Ícone de uma engranegem" /><div><h3>Preferências</h3></div></Link></li>
+            <li><Link to="/em-desenvolvimento" className="link"><img src={gear} alt="Ícone de uma engranegem" /><div><h3>Preferências</h3></div></Link></li>
             <li><Link to="/ajuda" className="link"><img src={help} alt="Ícone de interrogação" /><div><h3>Ajuda</h3></div></Link></li>
             <li><Link to="/" className="link"><img src={logout} alt="Ícone indicando logout" /><div><h3>Sair</h3></div></Link></li>
           </ul>

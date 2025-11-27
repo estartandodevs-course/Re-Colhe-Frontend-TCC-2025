@@ -3,7 +3,7 @@ import Lixeira from '../../assets/img/lixeira.png';
 import NavButton from '../../components/NavButton/NavButton';
 import './Inicio.css';
 
-function Inicio() {
+const Inicio = () => {
   return (
     <main className="inicio-main">
       <section>

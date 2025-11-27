@@ -12,7 +12,7 @@ import FooterNavBar from '../../components/FooterNavBar/FooterNavBar';
 
 import './Home.css';
 
-function Home() {
+const Home = () => {
   const [userType, setUserType] = useState<string | null>(null);
 
   useEffect(() => {

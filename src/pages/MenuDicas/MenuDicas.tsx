@@ -41,19 +41,19 @@ const MenuDicas = () => {
               {userType === 'empresa' && <div><h3>Boas Práticas de Descarte</h3><span>Dicas rápidas para gerenciar resíduos da sua empresa</span></div>}
             </NavButton></li>
 
-            <li><NavButton className="button-nav-dicas">
+            <li><NavButton to="/em-desenvolvimento" className="button-nav-dicas">
               <img src={greenParcel} alt="Botão de navegação para dicas" />
               {userType === 'morador' && <div><h3>Materiais e descarte</h3><span>Guia completo dos diferentes tipos de resíduos</span></div>}
               {userType === 'empresa' && <div><h3>Tipos de Resíduos</h3><span>Saiba como separar corretamente cada material.</span></div>}
             </NavButton></li>
 
-            <li><NavButton className="button-nav-dicas">
+            <li><NavButton to="/em-desenvolvimento" className="button-nav-dicas">
               <img src={greenTech} alt="Botão de navegação para notificações" />
               {userType === 'morador' && <div><h3>Curiosidades Sustentáveis</h3><span>Fatos interessantes para você explorar</span></div>}
               {userType === 'empresa' && <div><h3>Sustentabilidade Corporativa</h3><span>Ideias para tornar sua empresa mais verde.</span></div>}
             </NavButton></li>
 
-            <li><NavButton className="button-nav-dicas">
+            <li><NavButton to="/em-desenvolvimento" className="button-nav-dicas">
               <img src={greenSpreadsheet} alt="Botão de navegação para notificações" />
               {userType === 'morador' && <div><h3>Notícias e Campanhas Ambientais</h3><span>Fique por dentro das últimas novidades e ações.</span></div>}
               {userType === 'empresa' && <div><h3>Conecte-se com sua equipe</h3><span>Saiba como passar informações de forma eficaz.</span></div>}

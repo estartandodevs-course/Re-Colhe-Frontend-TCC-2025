@@ -7,7 +7,7 @@ import Inicio from "../pages/Inicio/Inicio";
 import Menu from "../pages/Menu/Menu";
 import DadosUsuario from "../pages/DadosUsuario/DadosUsuario";
 import PevsFavoritos from "../pages/PevsFavoritos/PevsFavoritos";
-import Preferencias from "../pages/Preferencias/Preferencias";
+import EmDesenvolvimento from "../pages/EmDesenvolvimento/EmDesenvolvimento";
 import Ajuda from "../pages/Ajuda/Ajuda";
 import Notificacoes from "../pages/Notificacoes/Notificacoes";
 import PontosDeColeta from "../pages/PontosDeColeta/PontosDeColeta";
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       { path: "menu", element: <Menu /> },
       { path: "meus-dados", element: <DadosUsuario /> },
       { path: "pevs", element: <PevsFavoritos /> },
-      { path: "preferencias", element: <Preferencias /> },
+      { path: "/em-desenvolvimento", element: <EmDesenvolvimento /> },
       { path: "ajuda", element: <Ajuda /> },
       { path: "notificacoes", element: <Notificacoes /> },
       { path: "pontos-de-coleta", element: <PontosDeColeta /> },

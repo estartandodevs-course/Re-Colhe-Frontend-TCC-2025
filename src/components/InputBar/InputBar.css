@@ -16,10 +16,6 @@
   width: 100%;
 }
 
-.char-counter.limit-reached {
-  color: #ff4444;
-}
-
 /* Estilos para o input */
 .input-wrapper input {
   width: 100%;

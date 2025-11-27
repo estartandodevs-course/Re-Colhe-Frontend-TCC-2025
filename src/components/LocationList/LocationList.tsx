@@ -4,7 +4,7 @@ import type { Location } from '../../types/locations';
 type LocationListProps = {
   locations: Location[];
   className?: string;
-  searchedMaterial?: string; // Nova prop
+  searchedMaterial?: string;
 };
 
 function LocationList({ locations, className, searchedMaterial }: LocationListProps) {
@@ -22,7 +22,7 @@ function LocationList({ locations, className, searchedMaterial }: LocationListPr
         <LocationCard 
           key={loc.id} 
           location={loc} 
-          searchedMaterial={searchedMaterial} // Passa para cada card
+          searchedMaterial={searchedMaterial}
         />
       ))}
     </div>

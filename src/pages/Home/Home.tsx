@@ -23,7 +23,7 @@ function Home() {
     <>
       <Header />
       <main>
-        <SearchBar placeholder="O que você deseja encontrar?" />
+        <SearchBar placeholder="O que você deseja encontrar?" disabled/>
 
         {userType === 'morador' && <img src={banner} alt="Mensagem do banner: Sua próxima coleta municipal será em 29/11 às 14h" className="banner"/>}
         {userType === 'empresa' && <img src={bannerEmp} alt="Mensagem do banner: Sua próxima coleta será em 25/11 às 15h" className="banner"/>}

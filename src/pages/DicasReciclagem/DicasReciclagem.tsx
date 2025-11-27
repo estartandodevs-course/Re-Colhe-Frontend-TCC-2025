@@ -45,7 +45,8 @@ const DicasDeReciclagem = () => {
               width="560"
               height="315"
               src={userType === 'morador' ? "https://www.youtube-nocookie.com/embed/Y8Vhj9YVLgI?si=F1SWXS-kqTlRu6JS&amp;controls=0" : "https://www.youtube-nocookie.com/embed/lZohdiZbXB0?si=XctXpMiqPWKLbj4p&amp;controls=0"}
-              title="YouTube video player"
+              title="Como Separar o Lixo: GUIA PRÁTICO DE RECICLAGEM DOMÉSTICA"
+              loading="lazy"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -76,7 +77,8 @@ const DicasDeReciclagem = () => {
               width="560"
               height="315"
               src={userType === 'morador' ? "https://www.youtube-nocookie.com/embed/H4XNl32NrII?si=-6zVH-CCwHdo0c9Z&amp;controls=0" : "https://www.youtube-nocookie.com/embed/wp7EGMw2GX0?si=6TK7Y87BfgMorFXi&amp;controls=0"}
-              title="YouTube video player"
+              title="Saiba quais produtos podem ser recicláveis"
+              loading="lazy"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

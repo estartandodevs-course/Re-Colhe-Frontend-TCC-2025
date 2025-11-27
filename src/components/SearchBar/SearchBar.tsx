@@ -6,11 +6,13 @@ type SearchBarProps = {
   onSearch?: (term: string) => void;
   placeholder?: string;
   buttonLabel?: string;
+  disabled?: boolean;
 };
 
 function SearchBar({
   onSearch,
   placeholder = 'Digite sua busca...',
+  disabled
 }: SearchBarProps) {
   const [input, setInput] = useState('');
 
@@ -20,7 +22,7 @@ function SearchBar({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="search-bar">
+    <form onSubmit={handleSubmit} className="search-bar" >
       <button type="submit">
         <img src={search} alt="Buscar" />
       </button>
@@ -29,6 +31,7 @@ function SearchBar({
         placeholder={placeholder}
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        disabled={disabled}
       />
     </form>
   );

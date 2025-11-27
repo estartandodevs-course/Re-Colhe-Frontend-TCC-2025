@@ -8,9 +8,10 @@ type NavButtonProps = {
   children?: ReactNode;
   state?: unknown;
   onClick?: () => void;
+  disabled?: boolean;
 };
 
-function NavButton({ to, label, className, children, state, onClick }: NavButtonProps) {
+function NavButton({ to, label, className, children, state, onClick, disabled }: NavButtonProps) {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -22,7 +23,7 @@ function NavButton({ to, label, className, children, state, onClick }: NavButton
   };
 
   return (
-    <button type="button" className={className} onClick={handleClick}>
+    <button type="button" className={className} onClick={handleClick} disabled={disabled}>
       {label}
       {children}
     </button>

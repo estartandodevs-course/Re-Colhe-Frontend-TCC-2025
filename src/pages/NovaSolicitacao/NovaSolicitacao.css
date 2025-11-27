@@ -1,0 +1,103 @@
+.pagina-nova-solicitacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  height: 100vh;
+  background-color: var(--soft-white);
+  padding: 0 1rem;
+  margin-top: 6.43rem;
+}
+
+.pagina-nova-solicitacao h1 {
+  font-family: var(--font-coolvetica);
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #011c15;
+}
+
+.pagina-nova-solicitacao section label,
+.pagina-nova-solicitacao section div h3 {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #011c15;
+}
+
+.localizacao-solicitacao-section div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.localizacao-solicitacao-section div img {
+  width: 1.5rem;
+}
+
+.nova-solicitacao-section,
+.localizacao-solicitacao-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.nova-solicitacao-section form,
+.localizacao-solicitacao-section form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.nova-solicitacao-section select,
+.input-titulo,
+.localizacao-solicitacao-section div,
+.input-cep {
+  margin-bottom: 1rem;
+}
+
+.nova-solicitacao-section .input-container,
+.localizacao-solicitacao-section .input-container {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.nova-solicitacao-section select,
+.input-titulo .input-wrapper,
+.input-descricao .input-wrapper,
+.input-cep .input-wrapper,
+.input-complemento .input-wrapper {
+  width: 100%;
+  height: 3rem;
+  border-radius: 12px;
+  border: 1px solid #474747;
+  display: flex;
+  align-items: center;
+  background-color: #e3e6e1;
+  padding: 0.63rem 1rem;
+}
+
+.input-descricao .input-wrapper {
+  height: 5.63rem;
+}
+
+.button-enviar-solicitacao:disabled {
+  width: 15.63rem;
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 12px;
+  font-family: var(--font-poppins);
+  color: #f9fafb;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: #01402f;
+  opacity: 0.6;
+  cursor: not-allowed;
+  text-align: center;
+  line-height: 3rem;
+}

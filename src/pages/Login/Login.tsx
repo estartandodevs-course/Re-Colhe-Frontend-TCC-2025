@@ -97,6 +97,7 @@ const Login = () => {
             className="login-input"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
           />
 
           <label htmlFor="password">Senha</label>
@@ -108,6 +109,7 @@ const Login = () => {
             showEyeIcon={true}
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
+            autoComplete="current-password"
           />
 
           <div className="reset-password-container">

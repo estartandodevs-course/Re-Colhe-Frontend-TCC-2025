@@ -51,7 +51,7 @@ const Forum = () => {
       <Header />
       <main className="pagina-forum">
         <h1 className="forum-titulo">Fórum de solicitações</h1>
-        <SearchBar placeholder="O que você deseja encontrar?" />
+        <SearchBar placeholder="O que você deseja encontrar?" disabled />
 
         <section className="forum-botoes-section">
 

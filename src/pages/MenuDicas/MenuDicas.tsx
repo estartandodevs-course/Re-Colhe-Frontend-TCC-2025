@@ -30,7 +30,7 @@ const MenuDicas = () => {
             multiplica boa ações</h1>
             <img src={aprendaBanner} alt="Quando você se informa, recicla ideia e multiplica boas ações" />
           </div>
-          <SearchBar placeholder="O que você deseja encontrar?" />
+          <SearchBar placeholder="O que você deseja encontrar?" disabled/>
         </section>
 
         <nav>

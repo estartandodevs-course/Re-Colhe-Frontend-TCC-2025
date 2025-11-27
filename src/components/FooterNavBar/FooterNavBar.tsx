@@ -33,7 +33,7 @@ const FooterNavBar = () => {
         <li>
           <NavButton to="/menu-dicas" className="aprenda">
             <img
-              src={currentPath === '/aprenda' ? aprendaIconActive : aprendaIcon}
+              src={currentPath === '/menu-dicas' || currentPath === '/dicas-reciclagem' ? aprendaIconActive : aprendaIcon}
               alt="Página Aprenda"
             />
           </NavButton>
